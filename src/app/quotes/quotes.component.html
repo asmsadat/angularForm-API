@@ -1,0 +1,7 @@
+<div class="p-10">
+    <div class="m-4"><strong>Game of Thrones Quotes:</strong></div>
+    <div *ngFor="let quote of quotes" class="w-96 border-2 m-4 p-4">
+        <div><strong>{{quote.character.name}}</strong></div>
+        <div>{{quote.sentence}}</div>
+    </div>
+</div>

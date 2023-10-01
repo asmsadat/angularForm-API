@@ -1,0 +1,27 @@
+<form class="p-10" [formGroup]="myReactiveForm" >
+    <div class="mb-5">
+        <span class="text-xl">Information</span>
+    </div>
+    <mat-form-field class="">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Your Name" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Your Email" formControlName="email">
+    </mat-form-field>
+    
+    <div formArrayName="phone">
+        <ng-container *ngFor="let phone of myReactiveForm.get('phone').controls; index as i">
+            <mat-form-field class="mr-4" >
+                <mat-label>Phone No.</mat-label>
+                <input matInput placeholder="Your Phone No." [formControlName]="i">
+            </mat-form-field>
+            <mat-icon color="warn" class="mr-4 cursor-pointer" matTooltip="Remove Phone No." (click)="removePhone(i)">close</mat-icon>
+        </ng-container>
+        <mat-icon color="primary" class="cursor-pointer" (click)="addPhone()">add_circle</mat-icon>
+    </div>
+    
+    <button type="submit" mat-raised-button color="primary" class="mt-4" (click)="onSubmit()">Submit</button>
+</form>
