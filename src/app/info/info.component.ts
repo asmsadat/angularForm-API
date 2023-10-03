@@ -9,15 +9,13 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 export class InfoComponent implements OnInit {
 
   myReactiveForm: FormGroup | any;
-  constructor() {
-    console.log('Contructor called');
-  }
 
   ngOnInit(): void {
     this.myReactiveForm = new FormGroup({
       'name': new FormControl(''),
       'email': new FormControl(''),
-      'phone': new FormArray([
+      'phone': new FormControl(''),
+      'language': new FormArray([
         new FormControl('')
       ])
     });
@@ -27,18 +25,14 @@ export class InfoComponent implements OnInit {
     console.log(this.myReactiveForm.value);
   }
 
-  addPhone() {
+  addLanguage() {
     console.log('Phone No. Added');
-    (<FormArray>this.myReactiveForm.get('phone')).push(
+    (<FormArray>this.myReactiveForm.get('language')).push(
       new FormControl(null)
     )
   }
 
-  removePhone(idx: number) {
-    (<FormArray>this.myReactiveForm.get('phone')).removeAt(idx);
-  }
-
-  ngOnDestroy(): void {
-    console.log('on Destroy called');
+  removeLanguage(idx: number) {
+    (<FormArray>this.myReactiveForm.get('language')).removeAt(idx);
   }
 }

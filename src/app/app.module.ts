@@ -9,9 +9,10 @@ import { InfoComponent } from './info/info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MyServiceService } from './my-service.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [MyServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

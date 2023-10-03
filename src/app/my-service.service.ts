@@ -12,6 +12,6 @@ export class MyServiceService {
   ) { }
 
   getQuotes(){
-    return this.myHttp.get<any>('https://api.gameofthronesquotes.xyz/v1/random/10');
+    return this.myHttp.get<any>('https://api.gameofthronesquotes.xyz/v1/random/12');
   }
 }
